@@ -3,16 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=565, initial-scale=1.0" />
-  <title>Bentolio | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Bentolio | Portfolio Intro</title>
+  <style>
+    body {
+      background: #fadcd9;
+      margin: 0;
+      font-family: 'Gilroy', sans-serif;
+    }
+    .slogan-intro {
+      width: 565px;
+      height: 479px;
+      border-radius: 20px;
+      background: #fadcd9;
+      position: relative;
+      margin: 40px auto;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    .intro-title {
+      position: absolute;
+      left: 24px;
+      top: 225px;
+      width: 475px;
+      height: 168px;
+      font-family: 'Gilroy', sans-serif;
+      font-weight: 700;
+      font-size: 56px;
+      line-height: 1em;
+      color: #000;
+      margin: 0;
+      text-align: left;
+    }
+    .flower-icon {
+      position: absolute;
+      left: 416px;
+      top: 34px;
+      width: 119px;
+      height: 119px;
+    }
+  </style>
 </head>
 <body>
-  <div class="slogan-intro">
-    <h1 class="intro-title">Artist Redefining Architecture with AI-Driven Design</h1>
-    <div class="flower-icon">
-      <!-- Flower SVG will be inserted here -->
-      <img src="flower.svg" alt="Flower Icon" width="119" height="119" />
-    </div>
-  </div>
+  <div id="app"></div>
+  <script>
+    // 동적으로 DOM 생성 (바닐라 JS)
+    const app = document.getElementById('app');
+
+    // 메인 프레임
+    const frame = document.createElement('div');
+    frame.className = 'slogan-intro';
+
+    // 타이틀
+    const title = document.createElement('h1');
+    title.className = 'intro-title';
+    title.textContent = 'Artist Redefining Architecture with AI-Driven Design';
+
+    // 플라워 아이콘 (SVG)
+    const flower = document.createElement('div');
+    flower.className = 'flower-icon';
+    flower.innerHTML = `
+      <svg width="119" height="119" viewBox="0 0 119 119" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="59.5" cy="59.5" r="59.5" fill="#F8AFA6"/>
+      </svg>
+    `;
+
+    // 조립
+    frame.appendChild(title);
+    frame.appendChild(flower);
+    app.appendChild(frame);
+  </script>
 </body>
 </html>
